@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IVY ZEINNAH ❤️ My Forever Love</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="heartCanvas"></canvas>
+    <div id="floatingHearts"></div>
+
+    <main class="container">
+
+        <div class="top-label">A SPECIAL GIFT FOR YOU ❤️</div>
+
+        <h1>IVY ZEINNAH</h1>
+        <h2>My Forever Love 💕</h2>
+
+        <p class="intro">
+            Every heartbeat reminds me of you.
+            You are my happiness, my sunshine and my greatest blessing.
+        </p>
+
+        <div class="heart-area">
+            <canvas id="particleHeart"></canvas>
+        </div>
+
+        <div class="photo-frame">
+            <img src="photos/ivy.png"
+                 alt="My beautiful Ivy"
+                 onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='block';">
+
+            <div id="photoFallback">
+                ❤️ Ivy's beautiful photo will appear here ❤️
+                <small>Add your photo as photos/ivy.jpg</small>
+            </div>
+        </div>
+
+        <h2 class="love-heading">I LOVE YOU, IVY ❤️</h2>
+
+        <p class="message" id="loveMessage">
+            You make my world more beautiful.
+        </p>
+
+        <button id="messageButton">Read My Love Message 💌</button>
+
+        <button id="musicButton">🎵 Play Romantic Music</button>
+
+        <audio id="backgroundMusic" loop>
+            <source src="music/romantic.mp3" type="audio/mpeg">
+        </audio>
+
+        <div class="surprise-section">
+            <h3>Something Special For You 💝</h3>
+            <button id="surpriseButton">Open Your Surprise ❤️</button>
+            <div id="surpriseMessage" class="hidden">
+                <h2>MY DEAREST IVY ❤️</h2>
+                <p>
+                    If I could choose again, I would still choose you.
+                    You are special, precious and unforgettable.
+                    May our love continue to grow every day.
+                </p>
+                <h2>FOREVER YOURS! 💍</h2>
+            </div>
+        </div>
+
+        <footer>
+            Made with ❤️ for IVY ZEINNAH
+            <p>My heart beats for you. 💕</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

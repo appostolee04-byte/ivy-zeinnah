@@ -1,0 +1,265 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at center, #45102f, #160018, #050008);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+#heartCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#floatingHearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    padding: 35px 18px;
+}
+
+.top-label {
+    color: #ffb2d9;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-size: clamp(35px, 8vw, 65px);
+    letter-spacing: 5px;
+    background: linear-gradient(90deg, #ff70bd, #fff, #d85aff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: glow 3s infinite alternate;
+}
+
+h2 {
+    color: #ff91c8;
+    margin-top: 12px;
+}
+
+.intro {
+    max-width: 550px;
+    margin: 20px auto;
+    line-height: 1.8;
+    color: #f8d8e9;
+    font-size: 16px;
+}
+
+.heart-area {
+    width: 100%;
+    max-width: 500px;
+    height: 330px;
+    margin: 0 auto;
+}
+
+#particleHeart {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.photo-frame {
+    width: min(90%, 360px);
+    height: auto;
+    min-height: 0;
+    padding: 7px;
+    margin: 25px auto;
+    border-radius: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #ff42a1,
+        #ffdcf1,
+        #9d43ff
+    );
+
+    box-shadow:
+        0 0 25px #ff42a1,
+        0 0 55px #a82fff;
+
+    animation: photoGlow 3s infinite alternate;
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 20px;
+}
+
+
+
+#photoFallback {
+    display: none;
+    height: 100%;
+    border-radius: 20px;
+    background: #35132f;
+    padding: 50px 12px;
+    line-height: 2;
+}
+
+#photoFallback small {
+    display: block;
+    font-size: 11px;
+    color: #ffc3e1;
+}
+
+.love-heading {
+    margin-top: 25px;
+    font-size: 28px;
+    animation: glow 2s infinite alternate;
+}
+
+.message {
+    margin: 22px auto;
+    min-height: 45px;
+    color: #ffe0ef;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+button {
+    display: block;
+    margin: 15px auto;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #ff278b, #a62bff);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 20px #e72b9a;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 35px #ff60bd;
+}
+
+.surprise-section {
+    margin-top: 45px;
+    padding: 25px 15px;
+    border: 1px solid #ff5eb7;
+    border-radius: 20px;
+    background: rgba(255, 50, 150, 0.08);
+    box-shadow: 0 0 25px rgba(255, 50, 150, 0.2);
+}
+
+.surprise-section h3 {
+    color: #ffb5dc;
+    margin-bottom: 15px;
+}
+
+#surpriseMessage {
+    margin: 20px auto;
+    padding: 20px;
+    line-height: 1.9;
+    color: #ffe1ef;
+    max-width: 550px;
+    animation: appear 1s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 25px 5px;
+    color: #ffadd5;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    animation: floatUp linear forwards;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff269e;
+    }
+    to {
+        text-shadow: 0 0 30px #ff80d0, 0 0 50px #b52bff;
+    }
+}
+
+@keyframes photoGlow {
+    from {
+        box-shadow: 0 0 15px #ff42a1;
+    }
+    to {
+        box-shadow: 0 0 40px #ff42a1, 0 0 60px #a82fff;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .heart-area {
+        height: 270px;
+    }
+
+    .photo-frame {
+        width: 210px;
+        height: 250px;
+    }
+
+    .intro {
+        font-size: 14px;
+    }
+
+    .love-heading {
+        font-size: 23px;
+    }
+}
